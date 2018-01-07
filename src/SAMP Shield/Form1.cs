@@ -23,7 +23,11 @@ namespace SAMP_Shield
 
         /*
         
-            ACCEPTED MODS MD5 HASH LIST: 
+            ALLOWED MODS MD5 HASH LIST: 
+             ALLOWED MODS MD5 HASH LIST: 
+              ALLOWED MODS MD5 HASH LIST: 
+               ALLOWED MODS MD5 HASH LIST: 
+                ALLOWED MODS MD5 HASH LIST: 
              
         */
         List<string> OkFiles = new List<string>(new string[] 
@@ -54,8 +58,10 @@ namespace SAMP_Shield
 
       
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            // CHECK NEW VERSIONS
             WebClient wc = new WebClient();
             string lst = wc.DownloadString("https://raw.githubusercontent.com/ViniciusBrokeh/SAMP-Shield/master/version");
             if(lst.ToString().Contains(Application.ProductVersion.ToString()) == false)
@@ -63,6 +69,11 @@ namespace SAMP_Shield
                 MessageBox.Show("New version available: " + lst);
             }
             MessageBox.Show("https://github.com/ViniciusBrokeh/");
+            
+            
+            
+            
+            // CHECK IF GTADIR EXISTS IN SETTINGS
             if (Properties.Settings.Default.gta_directory.Length < 1)
             {
                 SetGtaDir formSelectPathGTA = new SetGtaDir();
@@ -92,10 +103,13 @@ namespace SAMP_Shield
         {
             try
             {
+            
+                   // LIST ALL .ASI AND .CS FILES THAT EXIST IN THE GAME DIRECTORY
                 List<string> asiFiles = Directory.GetFiles(gtadir, "*.asi", SearchOption.AllDirectories).ToList();
                 List<string> cleoFiles = Directory.GetFiles(gtadir, "*.cs", SearchOption.AllDirectories).ToList();
                 foreach (string asiFile in asiFiles)
                 {
+                  //CHECK IF IS NOT ALLOWED MOD
                     if (OkFiles.Contains(CalculateMD5(asiFile)) != true)
                     {
 
@@ -103,6 +117,7 @@ namespace SAMP_Shield
                         {
                             if (cheat_list.Items.Contains("Suspect file: " + Path.GetFileName(asiFile)) != true)
                             {
+                            // IF DONT ALREDY EXIST IN LIST.. ADD
                                 cheat_list.Items.Add("Suspect file: " + Path.GetFileName(asiFile));
                             }
 
@@ -113,6 +128,7 @@ namespace SAMP_Shield
                 }
                 foreach (string cleoFile in cleoFiles)
                 {
+                    //CHECK IF IS NOT ALLOWED MOD .CS
                     if (OkFiles.Contains(CalculateMD5(cleoFile)) != true)
                     {
 
@@ -120,6 +136,7 @@ namespace SAMP_Shield
                         {
                             if (cheat_list.Items.Contains("Suspect file: " + Path.GetFileName(cleoFile)) != true)
                             {
+                            // IF DONT ALREDY EXIST IN LIST.. ADD
                                 cheat_list.Items.Add("Suspect file: " + Path.GetFileName(cleoFile));
                             }
 
@@ -140,6 +157,7 @@ namespace SAMP_Shield
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+        //IF GTADIR IS OK... START SCAN
             if (Properties.Settings.Default.gta_directory.Length > 1)
             {
                 timer1.Stop();
@@ -149,32 +167,39 @@ namespace SAMP_Shield
 
         private void ScanThread_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+        //CREATE LOOP
             ScanThread.RunWorkerAsync();
         }
 
+
+        
         private void closeGTA_Tick(object sender, EventArgs e)
         {
+        // if found cheats close the game
             if (cheat_list.Items.Count > 0) {
                 Process[] processes = Process.GetProcessesByName("gta_sa");
                 if (processes.Length > 0)
                 {
-
+                    if found cheats close the game
                     processes[0].Kill();
                     MessageBox.Show("GTA can not be opened because there are suspicious files in the game folder.");
                 }
          }
         }
 
+
+    //MODPACK ALLOWED
         private void label2_Click(object sender, EventArgs e)
         {
             Process.Start("https://drive.google.com/file/d/1Lni0NpjQ36Nk0VrvrNOZ4etp_9bwiyQN/view?usp=sharing");
         }
 
+    //EXIT BUTTON
         private void label4_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+    //MINIMIZE BUTTON
         private void label5_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
