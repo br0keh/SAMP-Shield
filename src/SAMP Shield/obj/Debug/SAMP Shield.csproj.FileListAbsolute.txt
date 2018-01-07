@@ -1,0 +1,14 @@
+c:\users\brokeh\documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\bin\Debug\SAMP Shield.exe.config
+c:\users\brokeh\documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\bin\Debug\SAMP Shield.exe
+c:\users\brokeh\documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\bin\Debug\SAMP Shield.pdb
+c:\users\brokeh\documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\obj\Debug\SAMP Shield.csprojResolveAssemblyReference.cache
+c:\users\brokeh\documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\obj\Debug\SAMP_Shield.Form1.resources
+c:\users\brokeh\documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\obj\Debug\SAMP_Shield.Properties.Resources.resources
+c:\users\brokeh\documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\obj\Debug\SAMP Shield.csproj.GenerateResource.Cache
+c:\users\brokeh\documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\obj\Debug\SAMP Shield.exe
+c:\users\brokeh\documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\obj\Debug\SAMP Shield.pdb
+c:\Users\Brokeh\Documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\obj\Debug\SAMP_Shield.SetGtaDir.resources
+c:\Users\Brokeh\Documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\bin\Debug\SAMP Shield.exe.manifest
+c:\Users\Brokeh\Documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\bin\Debug\SAMP Shield.application
+c:\Users\Brokeh\Documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\obj\Debug\SAMP Shield.exe.manifest
+c:\Users\Brokeh\Documents\MemoryAddressesGTASA\SAMP Shield\SAMP Shield\obj\Debug\SAMP Shield.application
