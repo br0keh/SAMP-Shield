@@ -14,7 +14,8 @@ Download the executable from [GitHub Releases](https://github.com/ViniciusBrokeh
 ```
 1st: Launch the executable (SAMP_Shield_0.0.0.1.exe)
 2nd: Select GTA directory and click in "OK"
-3rd: Open your game!
+*3rd: Restart the program...
+4th: Open your game!
 ```
 
 ## Development
